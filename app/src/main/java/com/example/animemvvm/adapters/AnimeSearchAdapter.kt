@@ -19,6 +19,7 @@ class AnimeSearchAdapter() : RecyclerView.Adapter<AnimeSearchAdapter.AnimeViewHo
         val tvMembers = binding.tvMembers
         val tvRank = binding.tvRank
         val tvTitle = binding.tvTitle
+        val textRank = binding.textRank
     }
 
     private val differCallback = object : DiffUtil.ItemCallback<com.example.animemvvm.modelsT.search.Result>() {
@@ -44,6 +45,7 @@ class AnimeSearchAdapter() : RecyclerView.Adapter<AnimeSearchAdapter.AnimeViewHo
             Glide.with(holder.itemView)
                 .load(anime.image_url)
                 .into(ivAnimeImage)
+            textRank.text = "Rated"
             tvMembers.text = anime.members.toString()
             tvRank.text = anime.rated
             tvTitle.text = anime.title

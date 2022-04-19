@@ -4,50 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/off_white"
     android:padding="8dp">
 
     <ImageView
         android:id="@+id/ivAnimeImage"
         android:layout_width="160dp"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/textRank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="160dp"
+        android:text="Rank:"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textMember" />
+
+    <TextView
         android:id="@+id/tvRank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rank"
+        android:layout_marginEnd="120dp"
+        android:text="Rank:"
         android:textColor="@android:color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMembers" />
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="0dp"
+        android:layout_marginStart="8dp"
         android:layout_height="wrap_content"
         android:ellipsize="end"
-        android:maxLines="3"
+        android:maxLines="2"
         android:text="TITLE"
         android:textColor="@android:color/black"
         android:textSize="15sp"
         android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toRightOf="@+id/ivAnimeImage"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/textMember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="10dp"
+        android:text="Memebers:"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toEndOf="@+id/ivAnimeImage"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <TextView
         android:id="@+id/tvMembers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="72dp"
         android:text="Memebers"
         android:textColor="@android:color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvRank"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

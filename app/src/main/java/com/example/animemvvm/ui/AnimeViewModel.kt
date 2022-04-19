@@ -39,7 +39,7 @@ class AnimeViewModel(
     fun searchJikanResponce(query: String) = viewModelScope.launch {
         searchAnimeList.postValue(Resource.Loading())
         val response: Response<JikanV3SearchResponse> =
-            mAnimeRepository.searchAnimeList(query, searchAnimePage)
+            mAnimeRepository.searchAnimeList(query)
         searchAnimeList.postValue(handleSearchJikanResponse(response))
     }
 

@@ -13,9 +13,8 @@ class AnimeRepository(
     )= RetrofitInstance.api.getTopAnime(page)
 
     suspend fun searchAnimeList(
-        q: String,
-        page: Int = 1
-    ) = RetrofitInstance.api.searchTopAnime(q , page)
+        q: String
+    ) = RetrofitInstance.api.searchTopAnime(q)
 
     suspend fun upsert(anime: Top) = db.getAnimeDao().upsert(anime)
 

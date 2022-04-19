@@ -28,10 +28,6 @@ class AnimeActivity : AppCompatActivity() {
         setContentView(view)
 
 
-        val repository = AnimeRepository(AnimeDatabase(applicationContext))
-
-
-
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.animeNavHostFragment) as NavHostFragment
         navController = navHostFragment.navController

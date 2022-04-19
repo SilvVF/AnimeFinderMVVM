@@ -19,6 +19,7 @@ class AnimeAdapter() : RecyclerView.Adapter<AnimeAdapter.AnimeViewHolder>() {
         val tvMembers = binding.tvMembers
         val tvRank = binding.tvRank
         val tvTitle = binding.tvTitle
+        val textRank = binding.textRank
     }
 
     private val differCallback = object : DiffUtil.ItemCallback<Top>() {
@@ -45,6 +46,7 @@ class AnimeAdapter() : RecyclerView.Adapter<AnimeAdapter.AnimeViewHolder>() {
                 .load(anime.image_url)
                 .into(ivAnimeImage)
             tvMembers.text = anime.members.toString()
+            textRank.text = "Rank"
             tvRank.text = anime.rank.toString()
             tvTitle.text = anime.title
         }
