@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/anime_nav_graph.xml"
+    app:startDestination="@id/savedAnimeFragment">
+
+    <fragment
+        android:id="@+id/savedAnimeFragment"
+        android:name="com.example.animemvvm.ui.fragments.SavedAnimeFragment"
+        android:label="SavedAnimeFragment" >
+        <action
+            android:id="@+id/action_savedAnimeFragment_to_viewAnimeFragment"
+            app:destination="@id/viewAnimeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchAnimeFragment"
+        android:name="com.example.animemvvm.ui.fragments.SearchAnimeFragment"
+        android:label="SearchAnimeFragment" >
+        <action
+            android:id="@+id/action_searchAnimeFragment_to_viewAnimeFragment"
+            app:destination="@id/viewAnimeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/topAnimeFragment"
+        android:name="com.example.animemvvm.ui.fragments.TopAnimeFragment"
+        android:label="TopAnimeFragment" >
+        <action
+            android:id="@+id/action_topAnimeFragment_to_viewAnimeFragment"
+            app:destination="@id/viewAnimeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/viewAnimeFragment"
+        android:name="com.example.animemvvm.ui.fragments.ViewAnimeFragment"
+        android:label="ViewAnimeFragment" >
+        <argument
+            android:name="animeResult"
+            app:argType="com.example.animemvvm.modelsT.Top" />
+    </fragment>
+</navigation>

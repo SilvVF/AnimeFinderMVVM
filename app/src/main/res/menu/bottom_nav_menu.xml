@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/topAnimeFragment"
+        android:title="Top"
+        android:icon="@drawable/ic_all"/>
+
+    <item
+        android:id="@+id/searchAnimeFragment"
+        android:title="search"
+        android:icon="@drawable/ic_search" />
+
+    <item
+        android:id="@+id/savedAnimeFragment"
+        android:title="saved"
+        android:icon="@drawable/ic_favorite" />
+
+
+</menu>
