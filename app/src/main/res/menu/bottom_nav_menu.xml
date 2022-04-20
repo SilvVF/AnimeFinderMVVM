@@ -8,12 +8,12 @@
 
     <item
         android:id="@+id/searchAnimeFragment"
-        android:title="search"
+        android:title="Search"
         android:icon="@drawable/ic_search" />
 
     <item
         android:id="@+id/savedAnimeFragment"
-        android:title="saved"
+        android:title="Saved"
         android:icon="@drawable/ic_favorite" />
 
 

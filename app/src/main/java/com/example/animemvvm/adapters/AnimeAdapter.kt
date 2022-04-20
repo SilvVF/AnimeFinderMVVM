@@ -6,14 +6,14 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.animemvvm.databinding.ItemAnimePreviewBinding
+import com.example.animemvvm.databinding.CardAnimeItemBinding
 import com.example.animemvvm.modelsT.Top
 
 
 class AnimeAdapter() : RecyclerView.Adapter<AnimeAdapter.AnimeViewHolder>() {
 
     inner class AnimeViewHolder(
-        binding: ItemAnimePreviewBinding
+        binding: CardAnimeItemBinding
     ): RecyclerView.ViewHolder(binding.root) {
         val ivAnimeImage = binding.ivAnimeImage
         val tvMembers = binding.tvMembers
@@ -35,7 +35,7 @@ class AnimeAdapter() : RecyclerView.Adapter<AnimeAdapter.AnimeViewHolder>() {
     val differ = AsyncListDiffer(this, differCallback)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnimeViewHolder {
-        val bind = ItemAnimePreviewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val bind = CardAnimeItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return AnimeViewHolder(bind)
     }
 
@@ -46,7 +46,7 @@ class AnimeAdapter() : RecyclerView.Adapter<AnimeAdapter.AnimeViewHolder>() {
                 .load(anime.image_url)
                 .into(ivAnimeImage)
             tvMembers.text = anime.members.toString()
-            textRank.text = "Rank"
+            textRank.text = "Rank :"
             tvRank.text = anime.rank.toString()
             tvTitle.text = anime.title
         }
