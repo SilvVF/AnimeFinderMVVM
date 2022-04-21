@@ -27,7 +27,6 @@ class AnimeActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.animeNavHostFragment) as NavHostFragment
         navController = navHostFragment.navController

@@ -3,17 +3,17 @@
 
     <item
         android:id="@+id/topAnimeFragment"
-        android:title="Top"
+        android:title="@string/top"
         android:icon="@drawable/ic_all"/>
 
     <item
         android:id="@+id/searchAnimeFragment"
-        android:title="Search"
+        android:title="@string/search"
         android:icon="@drawable/ic_search" />
 
     <item
         android:id="@+id/savedAnimeFragment"
-        android:title="Saved"
+        android:title="@string/saved"
         android:icon="@drawable/ic_favorite" />
 
 
