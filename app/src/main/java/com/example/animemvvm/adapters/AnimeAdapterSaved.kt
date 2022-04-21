@@ -9,28 +9,27 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.animemvvm.databinding.CardAnimeItemBinding
-import com.example.animemvvm.modelsT.search.Result
+import com.example.animemvvm.databinding.CardAnimeItemSavedBinding
+import com.example.animemvvm.modelsT.Top
 
 
-class AnimeSearchAdapter() : RecyclerView.Adapter<AnimeSearchAdapter.AnimeViewHolder>() {
+class AnimeAdapterSaved() : RecyclerView.Adapter<AnimeAdapterSaved.AnimeViewHolder>() {
 
     inner class AnimeViewHolder(
-        binding: CardAnimeItemBinding
+        binding: CardAnimeItemSavedBinding
     ): RecyclerView.ViewHolder(binding.root) {
         val ivAnimeImage = binding.ivAnimeImage
         val tvMembers = binding.tvMembers
-        val tvRank = binding.tvRank
-        val tvTitle = binding.tvTitle
-        val textRank = binding.textRank
         val tvScore = binding.tvScore
+        val tvTitle = binding.tvTitle
     }
 
-    private val differCallback = object : DiffUtil.ItemCallback<com.example.animemvvm.modelsT.search.Result>() {
-        override fun areItemsTheSame(oldItem: Result, newItem: Result): Boolean {
-            return oldItem.id == newItem.id
+    private val differCallback = object : DiffUtil.ItemCallback<Top>() {
+        override fun areItemsTheSame(oldItem: Top, newItem: Top): Boolean {
+            return oldItem.mal_id == newItem.mal_id
         }
 
-        override fun areContentsTheSame(oldItem: Result, newItem: Result): Boolean {
+        override fun areContentsTheSame(oldItem: Top, newItem: Top): Boolean {
             return oldItem == newItem
         }
     }
@@ -38,7 +37,7 @@ class AnimeSearchAdapter() : RecyclerView.Adapter<AnimeSearchAdapter.AnimeViewHo
     val differ = AsyncListDiffer(this, differCallback)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnimeViewHolder {
-        val bind = CardAnimeItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val bind = CardAnimeItemSavedBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return AnimeViewHolder(bind)
     }
 
@@ -48,12 +47,10 @@ class AnimeSearchAdapter() : RecyclerView.Adapter<AnimeSearchAdapter.AnimeViewHo
             Glide.with(holder.itemView)
                 .load(anime.image_url)
                 .into(ivAnimeImage)
-            textRank.text = "Rated :"
             tvMembers.text = anime.members.toString()
-            tvRank.text = anime.rated
-            tvTitle.text = anime.title
-            findScoreTextColor(anime.score, tvScore)
             tvScore.text = anime.score.toString()
+            findScoreTextColor(anime.score, tvScore)
+            tvTitle.text = anime.title
         }
         holder.itemView.setOnClickListener {
             onItemClickListener?.let {
@@ -61,6 +58,7 @@ class AnimeSearchAdapter() : RecyclerView.Adapter<AnimeSearchAdapter.AnimeViewHo
             }
         }
     }
+
     private fun findScoreTextColor(score: Double?, textView: TextView) {
         score?.let {
             if (score < 7){
@@ -77,8 +75,8 @@ class AnimeSearchAdapter() : RecyclerView.Adapter<AnimeSearchAdapter.AnimeViewHo
         return differ.currentList.size
     }
 
-    private var onItemClickListener: ((Result) -> Unit)? = null
-    fun setOnItemClickListener(listener : (Result) -> Unit){
+    private var onItemClickListener: ((Top) -> Unit)? = null
+    fun setOnItemClickListener(listener : (Top) -> Unit){
         onItemClickListener = listener
     }
 

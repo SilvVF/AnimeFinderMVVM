@@ -46,29 +46,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_width="match_parent">
-                <TextView
-                    android:id="@+id/textRank"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rank :"
-                    android:layout_margin="4dp"
-                    android:textColor="@color/off_white" />
-                <TextView
-                    android:id="@+id/tvRank"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="3"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_margin="4dp"
-                    android:textColor="@color/off_white"
-                     />
+
                 <TextView
                     android:id="@+id/textScore"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
                     android:text="Score :"
-                    android:layout_margin="4dp"
                     android:textColor="@color/off_white" />
                 <TextView
                     android:id="@+id/tvScore"
@@ -77,9 +61,9 @@
                     android:text="3"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:layout_margin="4dp"
+                    android:layout_margin="8dp"
                     android:textColor="@color/off_white"
-                    />
+                     />
 
             </LinearLayout>
             <LinearLayout
@@ -91,14 +75,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Members :"
-                    android:layout_margin="6dp"
+                    android:layout_margin="8dp"
                     android:textColor="@color/off_white" />
                 <TextView
                     android:id="@+id/tvMembers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Members"
-                    android:layout_margin="6dp"
+                    android:layout_margin="8dp"
                     android:textColor="@color/off_white"
                     />
             </LinearLayout>

@@ -1,7 +1,9 @@
 package com.example.animemvvm.adapters
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +22,7 @@ class AnimeAdapter() : RecyclerView.Adapter<AnimeAdapter.AnimeViewHolder>() {
         val tvRank = binding.tvRank
         val tvTitle = binding.tvTitle
         val textRank = binding.textRank
+        val tvScore = binding.tvScore
     }
 
     private val differCallback = object : DiffUtil.ItemCallback<Top>() {
@@ -49,10 +52,23 @@ class AnimeAdapter() : RecyclerView.Adapter<AnimeAdapter.AnimeViewHolder>() {
             textRank.text = "Rank :"
             tvRank.text = anime.rank.toString()
             tvTitle.text = anime.title
+            findScoreTextColor(anime.score, tvScore)
+            tvScore.text = anime.score.toString()
         }
         holder.itemView.setOnClickListener {
             onItemClickListener?.let {
                 it(anime)
+            }
+        }
+    }
+    private fun findScoreTextColor(score: Double?, textView: TextView) {
+        score?.let {
+            if (score < 7){
+                textView.setTextColor(Color.RED)
+            } else if (score in 7.0..8.5){
+                textView.setTextColor(Color.YELLOW)
+            } else {
+                textView.setTextColor(Color.GREEN)
             }
         }
     }

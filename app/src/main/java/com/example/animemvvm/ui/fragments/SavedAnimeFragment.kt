@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.animemvvm.R
 import com.example.animemvvm.adapters.AnimeAdapter
+import com.example.animemvvm.adapters.AnimeAdapterSaved
 import com.example.animemvvm.databinding.FragmentSavedAnimeBinding
 import com.example.animemvvm.databinding.FragmentTopAnimeBinding
 import com.example.animemvvm.ui.AnimeActivity
@@ -24,7 +25,7 @@ import com.google.android.material.snackbar.Snackbar
 class SavedAnimeFragment: Fragment(R.layout.fragment_saved_anime) {
 
     private lateinit var viewModel: AnimeViewModel
-    private lateinit var animeAdapter : AnimeAdapter
+    private lateinit var animeAdapter : AnimeAdapterSaved
     private lateinit var binding: FragmentSavedAnimeBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -89,7 +90,7 @@ class SavedAnimeFragment: Fragment(R.layout.fragment_saved_anime) {
     }
 
     private fun setupRecyclerView(){
-        animeAdapter = AnimeAdapter()
+        animeAdapter = AnimeAdapterSaved()
         binding.rvSavedAnime.apply {
             adapter = animeAdapter
             layoutManager = LinearLayoutManager(activity)
